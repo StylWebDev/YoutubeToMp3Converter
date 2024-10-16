@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="yt.png">
+    <title>YoutubeToMp3</title>
+</head>
+<body>
+   <div class="top-container">
+       <form action="/configure" method="post" id="form">
+           <h1 style="color: red"><i class="fa-brands fa-youtube"></i>YouTube  <span style="text-shadow: none; color: azure"> To MP3 converter</span> </h1>
+           <p class="rainbow">Covert YouTube Videos to Mp3 Now</p>
+           <div class="form-container">
+               <input type="text" id="video-url" name="videoURL" placeholder="Enter YouTube video URL" required>
+               <button type="submit" id="convert-btn">Convert</button>
+           </div>
+       </form>
+   </div>
+   <% if (convert) {%>
+     <div class="bottom-container">
+       <% if(error){ %>
+               <div class="errors">
+                   <p><%= msg %></p>
+               </div>
+       <% } else {%>
+           <div class="success">
+               <h2 style="text-align: center; color: white"><%= data.title%> %></h2>
+               <h3 style="text-align: center; color: darkslategray">Duration: <%= (data.duration/60).toFixed(2)%>min</h3>
+               <a href="<%= data.link%>">
+                   <button  type="button" id="download-btn">
+                       Download <%= (data.filesize/1000000).toFixed(2) %>MB
+                   </button>
+               </a>
+           </div>
+       <% } %>
+    </div>
+    <%}%>
+    <footer>
+        <p style="text-align: center">&copy; 2024 Konstantinos Stylianou. <br> All rights reserved.</p>
+        <div>
+            <a href="https://github.com/StylWebDev">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://styls.pages.dev">
+                <i class="fa-solid fa-earth-americas"></i> StylsDev
+            </a>
+            <a href="https://www.linkedin.com/in/konstantinos-stylianou-a4a95625b/">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
