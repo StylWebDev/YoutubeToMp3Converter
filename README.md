@@ -1,7 +1,7 @@
 
 # YouTubeToMp3Converter
 
-YouTubeToMp3Converter is a web application that allows users to convert YouTube videos to MP3 files by simply providing the video URL. The app is built using **Node.js**, **Express**, and **EJS** to handle the backend logic, routing, and rendering of dynamic web pages.
+YouTubeToMp3Converter is a simple web service that allows users to convert YouTube videos to MP3 files by simply providing the video URL. The app is built using **Node.js**, **Express**, and **EJS** to handle the backend logic, routing, and rendering of dynamic web pages.
 
 ## Features
 
